@@ -14,10 +14,7 @@ export async function hashToPrime(buffer) {
     return Primes.factorize(hash)
 }
 
-function isComposite(x) {
-    const mod30 = x % 30n;
-    return !(mod30 === 1n || mod30 === 7n || mod30 === 11n || mod30 === 13n || mod30 === 17n || mod30 === 19n || mod30 === 23n || mod30 === 29n);
-}
+
 
 ((async _ => {
 	const l = await hashToPrime(randomBytes(32));
