@@ -34,6 +34,12 @@ export class Primes {
 
 }
 
+export function nthPrime(n) {
+    if (n > Primes.count)
+        throw `${n} < ${Primes.count}`;
+    return primesList[n];
+}
+
 export function isPrime(n) {
     if (n < 2) return false;
     let i = 0;
