@@ -6,14 +6,14 @@ Prime number functions implemented in JavaScript.
 
 ```javascript
 const { isPrime } = await import('https://coins.github.io/primes-js/primes.js')
-console.log( isPrime(42), isPrime(41) )
+console.log( isPrime(42), isPrime(43) )
 ```
 
 ## Integer Factorization
 
 ```javascript
 const { factorize } = await import('https://coins.github.io/primes-js/primes.js')
-console.log( factorize(42n), factorize(41n) )
+console.log( factorize(42) )
 ```
 
 ## The n-th Prime Number
