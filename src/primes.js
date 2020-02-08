@@ -2,8 +2,8 @@ import { primesList } from './primes-list.js';
 
 /**
  * The n-th prime number
- * @param { Number } n - The index of the prime 
- * @return { Number } - The n-th prime
+ * @param { number } n - The index of the prime 
+ * @return { number } - The n-th prime
  *
  */
 export function nthPrime(n) {
@@ -15,8 +15,8 @@ export function nthPrime(n) {
 
 /**
  * Tests if a an integer is a prime
- * @param { Number } n - The integer to test
- * @return { Boolean } - The test result
+ * @param { number } n - The integer to test
+ * @return { boolean } - The test result
  *
  */
 export function isPrime(n) {
@@ -33,9 +33,9 @@ export function isPrime(n) {
 
 
 /**
- * Factorization an integer 
- * @param { Numbers } n - The integer to factor
- * @return { Object } - The factors
+ * Factorizing an integer 
+ * @param { number } n - The integer to factor
+ * @return { Map<number, number>} } - The factors
  *
  */
 export function factorize(n) {
@@ -60,8 +60,8 @@ export function factorize(n) {
 
 /**
  * The n-th prime number as BigInt
- * @param { BigInt } n - The index of the prime 
- * @return { Number } - The n-th prime
+ * @param { number } n - The index of the prime 
+ * @return { BigInt } - The n-th prime
  *
  */
 export function nthPrimeBigInt(n) {
@@ -70,9 +70,9 @@ export function nthPrimeBigInt(n) {
 
 
 /**
- * Factorization a BigInt integer
+ * Factorizing a BigInt integer
  * @param { BigInt } n - The integer to factor
- * @return { Object } - The factors
+ * @return { Map<number, number>} } - The factors
  *
  */
 export function factorizeBigInt(n) {
