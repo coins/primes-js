@@ -46,7 +46,6 @@ export function isPrime(n) {
     return true;
 }
 
-
 export function factorize(n) {
     const factors = {};
     const max = Primes.count;

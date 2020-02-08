@@ -5,7 +5,7 @@ import { CurvePoint } from '../curves/ec.js'
 
 
 export function factor(n) {
-    console.log('Factorizing',n)
+    console.log('Factorizing', n)
     class FQ extends _FQ {
         static get modulus() {
             return n
@@ -13,13 +13,13 @@ export function factor(n) {
     }
 
     let k = 1n;
-    for(let i=1n; i<100n; i++){
+    for (let i = 1n; i < 100n; i++) {
         k *= i
     }
-    console.log('k=',k)
+    console.log('k=', k)
 
     for (var i = -100; i < 100; i++) {
-        if(i === -2) continue
+        if (i === -2) continue
 
         class TestCurve extends CurvePoint {
 
@@ -39,9 +39,9 @@ export function factor(n) {
             }
         }
         // TestCurve.constructor.a=i
-        try{
+        try {
             TestCurve.G.multiply(k)
-        } catch(e){
+        } catch (e) {
             console.log('Found curve:', i, e)
             return
         }
