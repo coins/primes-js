@@ -52,6 +52,7 @@ export function isPrime(n) {
     return true;
 }
 
+// TODO: Implement factorize for Number vs BigInt
 export function factorize(n) {
     const factors = {};
     const max = Primes.count;

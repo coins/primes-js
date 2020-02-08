@@ -13,7 +13,7 @@ console.log( isPrime(42), isPrime(41) )
 
 ```javascript
 const { factorize } = await import('https://coins.github.io/primes-js/primes.js')
-console.log( factorize(42), factorize(41) )
+console.log( factorize(42n), factorize(41n) )
 ```
 
 ## The n-th Prime Number
