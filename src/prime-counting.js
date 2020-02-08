@@ -10,6 +10,15 @@ import { primesList as Primes } from './primes-list.js';
 const MAX_PRIME = Primes[Primes.length - 1]; // The largest prime in our database
 const MAX_N = MAX_PRIME * MAX_PRIME; // Our database enables us to count up to this number
 
+
+
+/**
+*
+* Counts the number of prime less than or equal to some number.
+* @param {number} n The number
+* @return {number} The number of primes up to n
+*
+*/
 export function countPrimes(n) {
     if (n < 2) return 0;
     if (n===2) return 1;
