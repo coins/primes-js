@@ -65,7 +65,7 @@ export function factorize(n) {
  *
  */
 export function nthPrimeBigInt(n) {
-    return BigInt(Primes.nth(n));
+    return BigInt(nthPrime(n));
 }
 
 
