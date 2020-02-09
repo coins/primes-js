@@ -22,3 +22,4 @@ console.log( factorize(42) )
 const { nthPrime } = await import('https://coins.github.io/primes-js/primes.js')
 console.log( nthPrime(42) )
 ```
+ 
