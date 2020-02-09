@@ -1,4 +1,4 @@
-# primes-js
+# primes.js
 
 Prime number functions implemented in JavaScript.
 

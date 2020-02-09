@@ -8,7 +8,7 @@ import { primesList } from './primes-list.js';
  */
 export function nthPrime(n) {
     if (n > Primes.count)
-        throw `${n} < ${Primes.count}`;
+        throw `Max prime exceeded! ${n} < ${Primes.count}`;
     return primesList[n];
 }
 
