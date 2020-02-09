@@ -44,9 +44,9 @@ export function factorize(n) {
     let i = 0;
     while (i < max && n !== 1) {
         const p = nthPrime(i);
-        if (n % bigP === 0) {
+        if (n % p === 0) {
             factors[p] = factors[p] ? factors[p] + 1 : 1;
-            n = n / bigP;
+            n = n / p;
         } else {
             i++;
         }
