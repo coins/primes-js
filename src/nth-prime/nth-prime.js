@@ -9,8 +9,8 @@ import { countPrimes } from '../prime-counting/prime-counting.js'
  *
  */
 export function nthPrime(n) {
-    const min = n * log10(n) // rough lower limit
-    const max = n * ( log2(n) + 100 ) // very rough upper limit
+    const min = n * Math.log10(n) // rough lower limit
+    const max = n * ( Math.log2(n) + 100 ) // very rough upper limit
     let searchResult = binarySearch(n, min, max)
     while (countPrimes(searchResult) === countPrimes(searchResult - 1)) 
     	searchResult--; // TODO: Do binary search here
@@ -34,17 +34,6 @@ function binarySearch(n, min, max) {
     }
 }
 
-
-function log2(n) {
-    const bits = Math.round(n.toString(16).length / 2)
-    return bits
-}
-
-function log10(n) {
-    const digits = n.toString().length - 1
-    return digits
-}
-
-// TODO: adapt to BigInt
-// TODO: check for Number.MAX_SAFE_INTEGER
 // TODO: make it work for bigger numbers. Binary search searchResult?
+// TODO: check for Number.MAX_SAFE_INTEGER
+// TODO: adapt to BigInt
