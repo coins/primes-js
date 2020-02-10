@@ -1,3 +1,5 @@
+import {mod_exp} from '../../../numbers-js/numbers.js'
+
 /**
  * Performs a stochastic primality test
  * @param {BigInt} n The number to test
@@ -5,12 +7,14 @@
  *
  */
 export function primalityTest(n) {
+    n = BigInt(n)
     if (isComposite_1(n)) return false;
-    A = [5040n, 30n, 12n, 11n, 7n, 6n, 5n, 3n, 2n]
+    const A = [5040n, 30n, 12n, 11n, 7n, 6n, 5n, 3n, 2n]
+    
     let isPrime = false
     A.forEach(a => {
         if (a >= n) return
-        w = isComposite_2(n, a)
+        const w = isComposite_2(n, a)
         if (w === false) return false
         if (w === true) isPrime = true
     })
@@ -24,7 +28,7 @@ export function primalityTest(n) {
  *
  */
 function isComposite_2(n, a) {
-    const y = pow(a, (n - 1n) / 2n, n)
+    const y = mod_exp(a, (n - 1n) / 2n, n)
     const modulus = y + 1n == n
     const isProbablyPrime = modulus ? true : (y == 1n ? undefined : false)
     return isProbablyPrime

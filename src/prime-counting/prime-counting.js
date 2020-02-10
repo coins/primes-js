@@ -1,32 +1,32 @@
-import { primesList as Primes } from './primes-list.js';
+import { primesList as Primes } from '../primes/primes-list.js';
 
 /**
-*
-*	A fast prime-counting algorithm.
-*	It counts the number of primes up to n.
-* 	It is a variant of the Meissel-Lehmer Algorithm.
-*	
-*/
+ *
+ *    A fast prime-counting algorithm.
+ *    It counts the number of primes up to n.
+ *     It is a variant of the Meissel-Lehmer Algorithm.
+ *    
+ */
 const MAX_PRIME = Primes[Primes.length - 1]; // The largest prime in our database
 const MAX_N = MAX_PRIME * MAX_PRIME; // Our database enables us to count up to this number
 
 
 
 /**
-*
-* Counts the number of prime less than or equal to some number.
-* @param {number} n The number
-* @return {number} The number of primes up to n
-*
-*/
+ *
+ * Counts the number of prime less than or equal to some number.
+ * @param {number} n The number
+ * @return {number} The number of primes up to n
+ *
+ */
 export function countPrimes(n) {
     if (n < 2) return 0;
-    if (n===2) return 1;
-    if (n===3) return 2;
-    if( n > MAX_N ) throw Error('N is too big. Bigger database of primes required!')
-    
-    let countPrimes = n;  // We assume all numbers are prime and then we subtract the composites
-    let index = 0;            
+    if (n === 2) return 1;
+    if (n === 3) return 2;
+    if (n > MAX_N) throw Error('N is too big. Bigger database of primes required!')
+
+    let countPrimes = n; // We assume all numbers are prime and then we subtract the composites
+    let index = 0;
     let p = Primes[0];
 
     while (p * p <= n) { // We iterate over all primes up to sqrt(n)
@@ -50,21 +50,22 @@ export function countPrimes(n) {
 */
 
 const cache2 = {}
+
 function countAlmostPrimesCached(m, p, index) {
     // We know these results without computation:
     if (p === 2) return m; // All numbers are 2-almost-primes
     if (m === 0) return -1; // FIXME: where are these artifacts coming from??
     if (m < p) return 0; // No number has a factor bigger than itself
     if (m === p || m - 1 === p) return 1; // There is only one number with a factor as big as itself (or one less)
-    
+
     if (p * p > m) { // This means, all "p-almost-primes" up to m are actually primes
         // So let's count only the primes
-        
+
         if (m > MAX_PRIME) return countPrimes(m) - index; // m is still too large. Let's recurse
-        
+
         // Yey, we can calculate countPrimes(m) "by hand"!
         let countPrimes_m = index;
-        while (Primes[countPrimes_m] <= m) countPrimes_m++;  // FIXME: Binary search here 
+        while (Primes[countPrimes_m] <= m) countPrimes_m++; // FIXME: Binary search here 
         return countPrimes_m - index;
     }
 
@@ -97,7 +98,7 @@ function _countAlmostPrimes(m, p) {
 
 
 // /*
-    
+
 //     Benchmarks and Tests
 
 // */
@@ -119,5 +120,3 @@ function _countAlmostPrimes(m, p) {
 // // benchmark(9, 50847534)
 // // benchmark(10, 455052511)
 // // benchmark(11, 4118054813)
-
-

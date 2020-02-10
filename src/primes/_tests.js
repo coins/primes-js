@@ -1,5 +1,4 @@
-import './jasmine-3.5.0/boot.js'
-import { isPrime, nthPrime, factorize } from '../primes.js'
+import { isPrime, nthPrime, factorize } from './primes.js'
 
 describe('The primes library', function() {
 
