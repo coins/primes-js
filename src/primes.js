@@ -1,1 +1,1 @@
-import * from '.primes.js'
+import * from './primes/primes.js'
