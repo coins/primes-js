@@ -1,7 +1,5 @@
 import { countPrimes } from '../prime-counting/prime-counting.js'
 
-
-
 /**
  * The n-th prime number. Note, nthPrime(1) == 2.
  * @param { BigInt } n - The index of the prime. 
