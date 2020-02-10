@@ -1,9 +1,9 @@
 import { primesList } from './primes-list.js';
 
 /**
- * The n-th prime number
- * @param { number } n - The index of the prime 
- * @return { number } - The n-th prime
+ * The n-th prime number. Note, nthPrime(0) == 2.
+ * @param { number } n - The index of the prime. 
+ * @return { number } - The n-th prime.
  *
  */
 export function nthPrime(n) {
@@ -12,30 +12,28 @@ export function nthPrime(n) {
     return primesList[n];
 }
 
-
 /**
- * Tests if a an integer is a prime
- * @param { number } n - The integer to test
- * @return { boolean } - The test result
+ * Tests if a an integer is a prime.
+ * @param { number } n - The integer to test.
+ * @return { boolean } - The test result.
  *
  */
 export function isPrime(n) {
-    if (n < 2) return false;
+    if (n < 2) return false
     let i = 0;
     let p = 2;
     while (p * p <= n) {
-        if (n % p === 0) return false;
+        if (n % p === 0) return false
         i++;
         p = nthPrime(i);
     }
     return true;
 }
 
-
 /**
- * Factorizing an integer 
- * @param { number } n - The integer to factor
- * @return { Map<number, number>} } - The factors
+ * Factorizing an integer.
+ * @param { number } n - The integer to factor.
+ * @return { Map<number, number>} } - The factors.
  *
  */
 export function factorize(n) {
@@ -57,22 +55,20 @@ export function factorize(n) {
     return factors;
 }
 
-
 /**
- * The n-th prime number as BigInt
- * @param { number } n - The index of the prime 
- * @return { BigInt } - The n-th prime
+ * The n-th prime number as BigInt. Note, nthPrime(0) == 2n.
+ * @param { number } n - The index of the prime. 
+ * @return { BigInt } - The n-th prime.
  *
  */
 export function nthPrimeBigInt(n) {
     return BigInt(nthPrime(n));
 }
 
-
 /**
- * Factorizing a BigInt integer
- * @param { BigInt } n - The integer to factor
- * @return { Map<number, number>} } - The factors
+ * Factorizing a BigInt integer.
+ * @param { BigInt } n - The integer to factor.
+ * @return { Map<number, number>} } - The factors.
  *
  */
 export function factorizeBigInt(n) {
