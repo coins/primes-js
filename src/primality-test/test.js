@@ -2,7 +2,7 @@ import { primalityTest } from './primality-test.js'
 
 describe('The function "primalityTest"', function() {
 
-    it('returns true for most primes', function() {
+    it('returns true for every prime', function() {
 
         expect(primalityTest(32416187567)).toBeTrue()
         expect(primalityTest(32416188223)).toBeTrue()
@@ -22,7 +22,7 @@ describe('The function "primalityTest"', function() {
     })
 
 
-    it('returns false for every composite', function() {
+    it('returns false for most composites', function() {
 
         expect(primalityTest(32416187567 + 1)).toBeFalse()
         expect(primalityTest(32416188223 + 1)).toBeFalse()

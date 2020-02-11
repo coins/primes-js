@@ -1,4 +1,4 @@
-import {mod_exp} from '../../../numbers-js/numbers.js'
+import { mod_exp } from '../../../numbers-js/numbers.js'
 
 /**
  * Performs a stochastic primality test
@@ -10,7 +10,7 @@ export function primalityTest(n) {
     n = BigInt(n)
     if (isComposite_1(n)) return false;
     const A = [5040n, 30n, 12n, 11n, 7n, 6n, 5n, 3n, 2n]
-    
+
     let isPrime = false
     A.forEach(a => {
         if (a >= n) return
@@ -43,3 +43,21 @@ function isComposite_1(x) {
     const mod30 = x % 30n;
     return !(mod30 === 1n || mod30 === 7n || mod30 === 11n || mod30 === 13n || mod30 === 17n || mod30 === 19n || mod30 === 23n || mod30 === 29n);
 }
+
+
+
+// function another_primalityTest(n) {
+//     const k = (n - 2n) * (n - 1n) / 2n
+//     const s = (n - 1n) / 2n
+//     return !((k + s) % (n - 1n))
+// }
+
+
+// function yet_another_primalityTest(n, g = 2n) {
+//     const k = (n - 2n) * (n - 1n) / 2n
+//     return !(mod_exp(g, k, n) * (n - 1n) % n)
+// }
+
+// function still_yet_another_primalityTest(n, g = 2n) {
+//     return another_primalityTest(n) && yet_another_primalityTest(n)
+// }

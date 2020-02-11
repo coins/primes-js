@@ -25,7 +25,7 @@ describe('The primes library', function() {
     })
 
     describe('The function "factorize"', function() {
-        it('returns the n-th prime', function() {
+        it('returns the integer factorization', function() {
             expect(factorize(42)).toEqual({ 2: 1, 3: 1, 7: 1 })
             expect(factorize(100)).toEqual({ 2: 2, 5: 2 })
             expect(factorize(8880)).toEqual({ 2: 4, 3: 1, 5: 1, 37: 1 })
